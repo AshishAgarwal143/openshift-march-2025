@@ -122,9 +122,18 @@
 - examples
   - Docker is a container engine that depends on containerd which inturn depends on runc Container Runtime
   - Podman is a container engine that depends on CRI-O container runtime
-  
 </pre>
+
 # Docker Overview
+<pre>
+- Docker is developed in Golang by a company called Docker Inc
+- Docker comes in 2 flavours
+  - Docker Community Edition - Docker CE ( opensource )
+  - Docker Enterprise Edition - Docker EE ( Commercial - Paid license )
+- follows client/server architecture
+- docker - is the client tool
+- dockerd - is the server tool that runs as a service ( docker application container engine )
+</pre>
 
 ## Docker High Level Architecture
 
