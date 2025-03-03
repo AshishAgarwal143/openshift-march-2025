@@ -161,9 +161,28 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo systemctl status docker
-sudo su $USER
+sudo $USER
 docker --version
 docker images
 ```
 
 Expected output
+![image](https://github.com/user-attachments/assets/c2d041bb-97b0-4b7f-b75a-af7334bf746a)
+![image](https://github.com/user-attachments/assets/cdb8e732-755f-4486-89dd-d9968c665532)
+
+
+## Lab - Troubleshooting Docker permission denied
+<pre>
+- When we install docker, docker creates an user group called docker
+- as the docker client and server uses an unix socket
+- each user must have access to unix socket, i.e read/write permission
+- one can gain read/write permssion to the unix socket used by docker by adding the user to the usergroup docker
+</pre>
+
+The below command adds, the user to docker usergroup
+```
+id
+su $USER
+id
+docker images
+```
