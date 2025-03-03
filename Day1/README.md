@@ -196,7 +196,6 @@ docker pull nginx:latest
 
 Expected output
 ![image](https://github.com/user-attachments/assets/3c8c7b1d-5ff2-420b-9470-830ecc0a7f98)
-![image](https://github.com/user-attachments/assets/0917fa97-46ba-4b6d-a224-5dfaa19f289a)
 
 
 ## Lab - Listing Docker Images in the local Docker registry
@@ -205,3 +204,4 @@ docker images
 ```
 
 Expected output
+![image](https://github.com/user-attachments/assets/0917fa97-46ba-4b6d-a224-5dfaa19f289a)
