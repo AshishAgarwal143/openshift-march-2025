@@ -205,3 +205,13 @@ docker images
 
 Expected output
 ![image](https://github.com/user-attachments/assets/0917fa97-46ba-4b6d-a224-5dfaa19f289a)
+
+## Lab - Deleting a Docker Image from your local docker registry
+```
+docker images
+docker rmi ubuntu:latest
+docker images
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/fe0762dd-2982-457b-89bc-ddb62197dd8e)
