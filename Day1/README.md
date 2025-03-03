@@ -72,6 +72,10 @@
 
 ## Hypervisor High Level Architecture
 
+## Linux Kernel Features that makes container technology possible
+1. Namespace - Isolation
+2. Control Group (CGroup) - applying resource quota restrictions
+
 ## Container Technology
 <pre>
 - is an application virtualization technology
@@ -80,14 +84,46 @@
 - each container represents an application or an application process
 - containers aren't Operating System
 - containers will never be able to replace Hypervisors
+- containers are isolated by namespaces
+- containers resource quota can be restricted using control group aka CGroups
 - in real world, Hypervisors and containers are used in combination, hence they are completing technology not competing technology
-  
+- containers just like VMs/OS, they also get their own IP Address
+- containers just like VMs/OS, they also get their own File system
+- containers just like VMs/OS, they also get their own port range 0-65535 
+- containers just like VMs/OS, they get their own network stack ( 7 OSI Layers )
+- containers just like VMs/OS, they get thier own software defined network cards (NICs)
+- it is because of these common features, people tend to compare containers with Operating system or Virtual Machines
+</pre>
+
+## What is there in an Ubuntu container?
+<pre>
+- package manager tool to install/uninstall/upgrade softwares
+- basic unix commands
+- shell
+- IP address
+- Dedicated Ports
+- Dedicated network cards(one or more)
 </pre>
 
 ## Container Runtime Overview
+<pre>
+- is a low-level software that manages container images and containers
+- not so user-friendly, hence normally end-users don't use this directly
+- examples
+  - runC container runtime
+  - CRI-O container runtime
+</pre>
 
 ## Container Engine Overview
-
+<pre>
+- is a high-level software that manages container images and containers
+- very user-friendly
+- container engines depends on container runtimes to manage images and containers
+- examples
+  - Docker is a container engine that depends on containerd which inturn depends on runc Container Runtime
+  - Podman is a container engine that depends on CRI-O container runtime
+  
+</pre>
 # Docker Overview
 
 ## Docker High Level Architecture
