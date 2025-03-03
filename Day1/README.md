@@ -71,6 +71,7 @@
 
 
 ## Hypervisor High Level Architecture
+![Hypervisor Architecture](HypervisorHighLevelArchitecture.png)
 
 ## Linux Kernel Features that makes container technology possible
 1. Namespace - Isolation
@@ -136,4 +137,4 @@
 </pre>
 
 ## Docker High Level Architecture
-
+![Docker Architecture](DockerHighLevelArchitecture.png)
