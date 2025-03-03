@@ -215,3 +215,21 @@ docker images
 
 Expected output
 ![image](https://github.com/user-attachments/assets/fe0762dd-2982-457b-89bc-ddb62197dd8e)
+
+## Lab - Creating a docker container in background(daemon/deattached) mode
+```
+docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:latest /bin/bash
+```
+
+In the above command
+<pre>
+dit - stands for deattached interactive terminal
+name - name of the container(optional), in case you don't provide a name, docker server will automatically assign a random name
+hostname - hostname of the container(optional), if not assigned docker server will assign docker container id as hostname
+ubuntu:latest - is the name of the docker image, if not present in your local registry, docker server will automatically downlad it before creating the containers
+/bin/bash - is the application we wish to run inside the container once the container starts running
+</pre>
+
+Expected output
+![image](https://github.com/user-attachments/assets/5a5eefaf-25ed-4f3c-8407-0e217ee3854e)
+
