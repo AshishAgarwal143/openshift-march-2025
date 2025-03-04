@@ -24,3 +24,8 @@ docker rm -f $(docker ps -aq)
 ```
 docker rm -f $(docker ps -aq --filter "name=ubuntu")
 ```
+
+## Lab - Renaming a container
+```
+docker rename current-container-name new-container-name
+```
