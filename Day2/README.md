@@ -127,3 +127,99 @@ exit
 ```
 
 As you noticed, though we deleted the original mysql container that created the table and inserted data is gone, we are able to access the data via another container using docker volume mounting.
+
+## Lab - Setting up a Load Balancer with port forwarding using nginx docker image
+
+Let's create 3 web server container using nginx:latest docker image from Docker Hub Remote Registry
+```
+docker run -d --name server1 --hostname server1 nginx:latest
+docker run -d --name server2 --hostname server2 nginx:latest
+docker run -d --name server3 --hostname server3 nginx:latest
+docker ps
+```
+
+Let's find the IP address of the above containers
+```
+docker inspect -f {{.NetworkSettings.IPAddress}} server1
+docker inspect -f {{.NetworkSettings.IPAddress}} server2
+docker inspect server1 | grep IPA
+```
+
+Let's copy the nginx.conf from one of the web server to the current directory
+```
+docker cp server1:/etc/nginx/nginx.conf .
+```
+
+Let's edit the nginx.conf as shown below
+<pre>
+
+user  nginx;
+worker_processes  auto;
+
+error_log  /var/log/nginx/error.log notice;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    upstream backend {
+        server 172.17.0.2:80;
+        server 172.17.0.3:80;
+        server 172.17.0.4:80;
+    }
+
+    server {
+        location / {
+            proxy_pass http://backend;
+        }
+    }
+} 
+</pre>
+
+Let's create the lb container using nginx:latest docker image
+```
+docker run -d --name lb --hostame lb -p 80:80 nginx:latest
+docker ps
+```
+
+We need to configure the lb configure to make it work like a Load Balancer, hence let's copy the nginx.conf we prepared into it and reboot the container
+```
+docker cp nginx.conf lb:/etc/nginx/nginx.conf
+docker restart lb
+docker ps
+```
+
+In order to differentiate to which server the load balancer redirected our call, let's customize their html pages
+```
+echo "Server 1" > index.html
+docker cp index.html server1:/usr/share/nginx/html
+
+echo "Server 2" > index.html
+docker cp index.html server2:/usr/share/nginx/html
+
+echo "Server 3" > index.html
+docker cp index.html server3:/usr/share/nginx/html
+```
+
+Let's verify the response of server1
+```
+curl http://172.17.0.2:80
+```
+
+Let's verify the response of server2
+```
+curl http://172.17.0.3:80
+```
+
+Let's verify the response of server3
+```
+curl http://172.17.0.4:80
+```
+
+Let's test our load balancer, you can open the below from your ubuntu cloud machine web browser
+```
+http://localhost:80
+```
