@@ -45,4 +45,6 @@ ping 8.8.8.8
 
 Expected output
 ![image](https://github.com/user-attachments/assets/64ebeb6f-7ead-4ab7-83c4-da466090f653)
+![image](https://github.com/user-attachments/assets/f6b5d3a5-e59b-498e-99c2-35aa907fd863)
+![image](https://github.com/user-attachments/assets/e9e04b41-fff7-4a31-b1fd-a15b0c46c054)
 
