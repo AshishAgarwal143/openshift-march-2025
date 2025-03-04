@@ -76,3 +76,54 @@ Expected output
 ![image](https://github.com/user-attachments/assets/d7a64954-4e2e-4273-bf3b-8dc7d0c74224)
 ![image](https://github.com/user-attachments/assets/5aadddf4-e3b8-4300-a872-55cd52d9d8be)
 ![image](https://github.com/user-attachments/assets/8c64b38c-256f-4368-964f-1af3445790eb)
+
+
+## Lab - Using volume mounting to storage data externally in mysql container ( This is the best practice )
+Let's create a folder in the local system
+```
+mkdir -p /tmp/jegan
+```
+
+Let's create a mysql container and mount the above path inside the container at mount point /var/lib/mysql
+```
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/jegan:/var/lib/mysql mysql:latest
+docker ps
+```
+
+Getting inside the mysql container shell, when prompts for password type root@123 as the password
+```
+docker exec -it mysql /bin/sh
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+
+SHOW TABLES;
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(300) NOT NULL, duratio VARCHAR(300) NOT NULL, PRIMARY KEY(id) );
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO training VALUES ( 2, "Advanced Openshift", "10 Days" );
+SELECT * FROM training;
+exit
+exit
+```
+
+Let's delete the container
+```
+docker rm -f mysql
+```
+
+Let's recreate a new container and mount the same local path
+```
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/jegan:/var/lib/mysql mysql:latest
+docker ps
+docker exec -it mysql /bin/sh
+mysql -u root -p
+SHOW DATABASES;
+USE tektutor;
+SHOW TABLES;
+SELECT * FROM training;
+exit
+exit
+```
+
+As you noticed, though we deleted the original mysql container that created the table and inserted data is gone, we are able to access the data via another container using docker volume mounting.
