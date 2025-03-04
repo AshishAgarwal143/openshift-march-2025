@@ -79,7 +79,7 @@ Expected output
 
 
 ## Lab - Using volume mounting to storage data externally in mysql container ( This is the best practice )
-Let's create a folder in the local system
+Let's create a folder in the local system, replace my name with your name to avoid directory name conflicts
 ```
 mkdir -p /tmp/jegan
 ```
