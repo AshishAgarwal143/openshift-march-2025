@@ -49,3 +49,30 @@ Expected output
 ![image](https://github.com/user-attachments/assets/e9e04b41-fff7-4a31-b1fd-a15b0c46c054)
 ![image](https://github.com/user-attachments/assets/265b4693-f0ea-473a-a3c6-944056d22c78)
 
+## Lab - Creating a mysql db container
+```
+docker run -d --name mysql --hostame mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
+docker ps
+```
+
+Getting inside a container shell, when it prompts from mysql password, type 'root@123' without quotes
+```
+docker exec -it mysql /bin/bash
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+
+SHOW TABLES;
+CREATE TABLE training ( id INT NOT NULL, name VARCHAR(300) NOT NULL, duratio VARCHAR(300) NOT NULL, PRIMARY KEY(id) );
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO training VALUES ( 2, "Advanced Openshift", "10 Days" );
+SELECT * FROM training;
+exit
+exit
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/d7a64954-4e2e-4273-bf3b-8dc7d0c74224)
+![image](https://github.com/user-attachments/assets/5aadddf4-e3b8-4300-a872-55cd52d9d8be)
+![image](https://github.com/user-attachments/assets/8c64b38c-256f-4368-964f-1af3445790eb)
