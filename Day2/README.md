@@ -150,7 +150,7 @@ Let's copy the nginx.conf from one of the web server to the current directory
 docker cp server1:/etc/nginx/nginx.conf .
 ```
 
-Let's edit the nginx.conf as shown below
+Let's edit the nginx.conf as shown below ( you could create this file anywhere on the local machine )
 <pre>
 
 user  nginx;
@@ -185,7 +185,9 @@ docker run -d --name lb --hostame lb -p 80:80 nginx:latest
 docker ps
 ```
 
-We need to configure the lb configure to make it work like a Load Balancer, hence let's copy the nginx.conf we prepared into it and reboot the container
+We need to configure the lb configure to make it work like a Load Balancer, hence let's copy the nginx.conf we prepared into it and reboot the container.  
+
+Please note that, wherever you created the nginx.conf on your lab machine, you need to navigate to that directory before running the below command
 ```
 docker cp nginx.conf lb:/etc/nginx/nginx.conf
 docker restart lb
