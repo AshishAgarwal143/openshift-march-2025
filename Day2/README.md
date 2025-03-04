@@ -49,7 +49,7 @@ Expected output
 ![image](https://github.com/user-attachments/assets/e9e04b41-fff7-4a31-b1fd-a15b0c46c054)
 ![image](https://github.com/user-attachments/assets/265b4693-f0ea-473a-a3c6-944056d22c78)
 
-## Lab - Creating a mysql db container
+## Lab - Creating a mysql db container ( this is a bad practice - we shouldn't use container storage )
 ```
 docker run -d --name mysql --hostame mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest
 docker ps
