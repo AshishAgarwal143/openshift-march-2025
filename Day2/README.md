@@ -20,3 +20,7 @@ docker restart $(docker ps -q)
 docker rm -f $(docker ps -aq)
 ```
 
+## Lab - Deleting container that matches a name pattern
+```
+docker rm -f $(docker ps -aq --filter "name=ubuntu")
+```
