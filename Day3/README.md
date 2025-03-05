@@ -96,5 +96,5 @@
 
 ## Info - ReplicaSet Controller
 <pre>
-  
+- ReplicaSet controller takes ReplicaSet as the input and then it creates Pod as per the ReplicaSet
 </pre>
