@@ -29,6 +29,11 @@
 - time tested, production grade orchestration platform
 - supports CLI 
 - it supports a minimal Dashboard (Web Interface)
+- it supports basic building blocks
+  - we can add our custom resources by defining Custom Resource Definitions (YAML with some schema)
+  - In order to manage our Custom resources we need to implement Custom Controllers
+  - the combination of many custom resources and customer controller is called Operator
+  - using operators we can add many additional features on top of kubernetes
 </pre>
 
 ## Info - Red Hat Openshift
