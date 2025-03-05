@@ -58,10 +58,43 @@
 ## Info - Pod Overview
 <pre>
 - is a group of related containers
+- is a logical grouping of related containers
 - Pod is the smallest unit that can be deployed into Kubernetes/Openshift 
 - each Pod represents one application
 - every Pod has atleast 2 containers
 - every Pod has secret hidden infra-container called pause container
+- the pause container is not counted or revealed by Openshift 
 - the pause container gets created automatically, which supports networking i.e IP address, network stack, etc.,
 - in Kubernetes/Openshift, IP address is assigned only on the Pod level, not on the container level
+- this is a database record/entry stored in etcd database
+</pre>
+
+## Info - ReplicaSet
+<pre>
+- replicaset is the configuration that helps us convey, how may Pod instances must be running
+- it will describe desired count of pods, actual count of pods, numbers of pods that are ready
+- this is maintained in etcd database as a database record/entry
+</pre>
+
+## Info - Deployment
+<pre>
+- deployment is a configuration that helps us deploy our application, it captures the below information
+  - name of the deployment
+  - container image that must be used to deploy the application
+  - number of pods that are supposed to running
+  - this is yaml file or database record stored in etcd database in master nodes
+</pre>
+
+## Info - Deployment Controller
+<pre>
+- In Master node, there is a Controller Manager component which is a collection of many controller
+- Deployment Controller is one of the Controller that is part of Controller Manager
+- Each Controller manages one Resource, in this case Deployment Controller manages Deployment resource
+- Deployment Controller accepts Deployment as the input and it starts it work
+- Deployment Controller will create the ReplicaSet configuration to create the number of Pods mentioned by the user while issuing  the deployment command
+</pre>
+
+## Info - ReplicaSet Controller
+<pre>
+  
 </pre>
