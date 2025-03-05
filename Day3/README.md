@@ -54,3 +54,14 @@
   - many folders are treated read-only, if applications attempt to modify them, those applications will not run due to permission issue
   - applications should run as normal user(non-admimistrator), if they attempt things as admin, they won't be allowed to run
 </pre>
+
+## Info - Pod Overview
+<pre>
+- is a group of related containers
+- Pod is the smallest unit that can be deployed into Kubernetes/Openshift 
+- each Pod represents one application
+- every Pod has atleast 2 containers
+- every Pod has secret hidden infra-container called pause container
+- the pause container gets created automatically, which supports networking i.e IP address, network stack, etc.,
+- in Kubernetes/Openshift, IP address is assigned only on the Pod level, not on the container level
+</pre>
