@@ -81,5 +81,8 @@ oc new-project jegan
 Expected output
 ![image](https://github.com/user-attachments/assets/bacf9f9d-274c-4c07-be63-465c6c3d8533)
 
-
+## Info - Red Hat Image Registry
+<pre>
+https://catalog.redhat.com/software/containers/ubi8/nginx-120/6156abfac739c0a4123a86fd  
+</pre>
 
