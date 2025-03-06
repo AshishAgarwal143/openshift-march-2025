@@ -64,3 +64,10 @@ Expected output
 - Its always a best practice to create your own project before deploying applications
 - one project can host many applications
 </pre>
+
+## Lab - Finding the IP address of openshift nodes
+```
+oc get nodes -o wide
+```
+Expected output
+![image](https://github.com/user-attachments/assets/7d21175f-b950-422f-85d1-f143f3083e21)
