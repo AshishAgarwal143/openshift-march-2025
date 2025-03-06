@@ -118,3 +118,15 @@ oc get po
 Expected output
 ![image](https://github.com/user-attachments/assets/692b20ca-44f5-4bbe-bd29-d48f3eedb370)
 ![image](https://github.com/user-attachments/assets/699c9620-7313-4295-8dcf-2fc5ef00bb5d)
+
+In Server 192.168.1.233, the bitnami/nginx:latest image is already there, hence we can edit the deployment to convey it can use the existing image rather than attempting download the image each time from Docker Hub website
+```
+oc edit deploy/nginx
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/d416737d-13de-4bde-8e95-7fee3b632e65)
+
+In the above, you need edit imagePullPolicy from "Always" to "IfNotPresent"
+![image](https://github.com/user-attachments/assets/2466233a-d257-4d3f-bd58-884003449255)
+![image](https://github.com/user-attachments/assets/e097593e-72cc-4ab0-9e64-bf3479cdb5cf)
