@@ -86,3 +86,35 @@ Expected output
 https://catalog.redhat.com/software/containers/ubi8/nginx-120/6156abfac739c0a4123a86fd  
 </pre>
 
+
+
+## Lab- Deploying your first application into openshift
+```
+oc project jegan
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
+```
+
+List deployments
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+List replicasets
+```
+oc get replicasets
+oc get replicaset
+oc get rs
+```
+
+List pods
+```
+oc get pods
+oc get pod
+oc get po
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/692b20ca-44f5-4bbe-bd29-d48f3eedb370)
+![image](https://github.com/user-attachments/assets/699c9620-7313-4295-8dcf-2fc5ef00bb5d)
