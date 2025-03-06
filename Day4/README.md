@@ -130,3 +130,13 @@ Expected output
 In the above, you need edit imagePullPolicy from "Always" to "IfNotPresent"
 ![image](https://github.com/user-attachments/assets/2466233a-d257-4d3f-bd58-884003449255)
 ![image](https://github.com/user-attachments/assets/e097593e-72cc-4ab0-9e64-bf3479cdb5cf)
+
+## Lab - Deploying an application into Openshift using S2I(Source to Image) using docker strategy
+```
+oc project jegan
+oc new-app https://github.com/tektutor/hello-microservice.git --strategy=docker
+oc expose svc/hello-microservice
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/3b6a9e09-a890-4826-aebe-1c5d4a6e6ff4)
