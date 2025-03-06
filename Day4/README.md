@@ -47,3 +47,20 @@ oc get node master01.ocp4.alchemy.com -o json
 ```
 Expected output
 ![image](https://github.com/user-attachments/assets/94a3f964-9986-4ebd-a971-ded1cb611df5)
+
+## Info - Openshift Hierarchy
+<pre>
+- Node ( Server )
+  - Namespace 
+     - Pod 1
+       - Container 1
+       - Container 2
+</pre>  
+
+## Info - Openshift Project
+<pre>
+- Openshift project is nothing but Kubernetes namespace with access restrictions  
+- If we don't create a project before deploy our applications, it gets deployed onto default project
+- Its always a best practice to create your own project before deploying applications
+- one project can host many applications
+</pre>
