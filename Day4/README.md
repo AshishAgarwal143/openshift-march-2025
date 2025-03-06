@@ -57,6 +57,14 @@ Expected output
        - Container 2
 </pre>  
 
+## Lab - Finding the IP address of openshift nodes
+```
+oc get nodes -o wide
+```
+Expected output
+![image](https://github.com/user-attachments/assets/7d21175f-b950-422f-85d1-f143f3083e21)
+
+
 ## Info - Openshift Project
 <pre>
 - Openshift project is nothing but Kubernetes namespace with access restrictions  
@@ -65,9 +73,13 @@ Expected output
 - one project can host many applications
 </pre>
 
-## Lab - Finding the IP address of openshift nodes
+
+## Lab - Creating a new project in openshift
 ```
-oc get nodes -o wide
+oc new-project jegan
 ```
 Expected output
-![image](https://github.com/user-attachments/assets/7d21175f-b950-422f-85d1-f143f3083e21)
+![image](https://github.com/user-attachments/assets/bacf9f9d-274c-4c07-be63-465c6c3d8533)
+
+
+
