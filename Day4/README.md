@@ -1,4 +1,4 @@
-# Day 4
+![image](https://github.com/user-attachments/assets/6599da9d-048d-4505-abda-20e48b2abfc7)# Day 4
 
 ## Lab - Check the client version
 ```
@@ -39,3 +39,11 @@ Expected output
   - Worker 2 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
   - Worker 3 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
 </pre>
+
+## Lab - Getting the node definition as yaml or json
+```
+oc get node master01.ocp4.alchemy.com -o yaml
+oc get node master01.ocp4.alchemy.com -o json
+```
+Expected output
+![image](https://github.com/user-attachments/assets/94a3f964-9986-4ebd-a971-ded1cb611df5)
