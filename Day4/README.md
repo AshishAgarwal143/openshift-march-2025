@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/6599da9d-048d-4505-abda-20e48b2abfc7)# Day 4
+![image](https://github.com/user-attachments/assets/7efa8669-4980-4710-b102-202486d71cab)![image](https://github.com/user-attachments/assets/6599da9d-048d-4505-abda-20e48b2abfc7)# Day 4
 
 ## Lab - Check the client version
 ```
@@ -136,7 +136,10 @@ In the above, you need edit imagePullPolicy from "Always" to "IfNotPresent"
 oc project jegan
 oc new-app https://github.com/tektutor/hello-microservice.git --strategy=docker
 oc expose svc/hello-microservice
+oc logs -f bc/hello-microservice
 ```
 
 Expected output
 ![image](https://github.com/user-attachments/assets/3b6a9e09-a890-4826-aebe-1c5d4a6e6ff4)
+![image](https://github.com/user-attachments/assets/c1a14842-2b18-480e-a211-3b50e2fac02a)
+![image](https://github.com/user-attachments/assets/9552c1d0-10e7-4a81-b8e7-7ff58b70484e)
