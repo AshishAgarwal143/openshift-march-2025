@@ -27,3 +27,15 @@ Expected output
 ![image](https://github.com/user-attachments/assets/62618c30-a18c-4111-83bb-511290651bb2)
 ![image](https://github.com/user-attachments/assets/a91d32c0-019a-480d-8c8d-73b4bd245cc2)
 ![image](https://github.com/user-attachments/assets/a698b091-3edf-4941-9f0d-3761b2ac521d)
+
+## Info - Openshift Pod Network
+<pre>
+- Openshift cluster wide (IP Range ) - Pod Network - 10.0.0.0/8  
+- Openshift will break this range of IP addresses into for each node
+  - Master 1 Node - 10.28.0.0/24 ( Total IP addresses in this subnet - 250 )
+  - Master 2 Node - 10.29.0.0/24 ( Total IP addresses in this subnet - 250 )
+  - Master 3 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
+  - Worker 1 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
+  - Worker 2 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
+  - Worker 3 Node - 10.30.0.0/24 ( Total IP addresses in this subnet - 250 )
+</pre>
