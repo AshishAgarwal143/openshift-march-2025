@@ -160,3 +160,13 @@ Expected output
 - From this Internal Registry, individuals nodes can download the required images
 - Openshift Internal Image Registry can import images from Docker Hub and/or JFrog Artifactory Private Image Registry
 </pre>
+
+## Info - JFrog Private Image Registry
+<pre>
+- This is a server that will host all the container images published by different teams with your organization
+- Pull images from JFrog Artifactory to Openshift requires login credentials
+- Push images from Openshift to JFrog Artifactory Private Image Registry requires login credentials
+- Login credentials in Kubernetes/Openshift can be stored as Secrets
+- The Private Image Registry Secrets are normally referred as Pull secrets or Push secrets
+  
+</pre>
