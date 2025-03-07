@@ -21,6 +21,34 @@ https://catalog.redhat.com/software/containers/ubi8/openjdk-17/618bdbf34ae373968
 https://catalog.redhat.com/software/containers/ubi8/python-39/6065b24eb92fbda3a4c65d8f
 </pre>
 
+## Info - SOLID Design Principles
+<pre>
+S - Single Responsibility Principle (SRP)
+O - Open Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Seggregation Principle
+D - Dependency Injection or Dependency Inversion or Inversion of Control (IOC)
+</pre>
+
+## Info - ReplicationController
+<pre>
+- In older versions of Kubernetes, we had to use ReplicationController to deploy applications into Kubernetes (aka K8s)
+- As Openshift is Red Hat's Distribution of Kubernetes, even in Openshift we had to use ReplicationController for deploying applications
+- ReplicationController does two things
+  1. Rolling update
+  2. Scale up/down
+  - this kind of violates the Single Responsibility Principle
+  - as replicationcontroller doesn't support declarative style, K8s team wanted a better alternates, which is deployment and replicaset
+- Red Hat Openshift team introduced a new feature calle DeploymentConfig to deploy applications in declarative style( yaml - manifest files we can deploy applications )
+- Meanwhile, Google Kubernetes team, they refactored ReplicationController into two resources
+  1. Deployment
+  2. ReplicaSet
+- Kubernetes Deprecated use of ReplicationController for new application deployments as Deployment & ReplicaSet replaced ReplicationController
+- OpenShift DeploymentConfig internally uses ReplicationController
+- As Google Kubernetes deprecated use of ReplicationController, Red Hat Openshift team deprecated DeploymentConfig, instead it is recommended to use Deployment & ReplicaSet for new application deployments
+- ReplicationController is still retained for legacy background compatility reasons only, hence it is recommended to this anymore
+</pre>
+
 ## Info - Build Config
 
 ## Info - Build
