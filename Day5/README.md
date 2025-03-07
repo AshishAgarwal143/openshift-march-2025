@@ -184,3 +184,35 @@ oc create -f hello-daemonset.yml
 oc get po -o wide
 ```
 ![image](https://github.com/user-attachments/assets/02d37703-a0ab-44bb-b80a-ec9e05caa1b4)
+
+## Lab - CronJob
+Create a file cronjob.yml with the below content
+```
+apiVersion: batch/v1 
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      suspend: true
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox:1.28
+            command:
+            - bin/sh
+            - -c
+            - echo "Hello from OpenShift cluster ..."
+          restartPolicy: OnFailure
+```
+
+To run the cronjob
+```
+oc create -f cronjob.yml
+oc get cronjobs
+```
+
+Expected output
