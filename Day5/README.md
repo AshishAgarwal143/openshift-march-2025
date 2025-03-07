@@ -53,3 +53,4 @@ oc logs -f bc/hello-microservice
 Expected output
 ![image](https://github.com/user-attachments/assets/e8ea6c4e-9b32-4c63-87bb-3f57057125fc)
 ![image](https://github.com/user-attachments/assets/d44f1deb-375a-4ba9-a271-1d1f0b8a6322)
+![image](https://github.com/user-attachments/assets/c481c23e-089a-4fe7-8f1f-321335fa9ab5)
