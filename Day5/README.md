@@ -46,7 +46,7 @@ D - Dependency Injection or Dependency Inversion or Inversion of Control (IOC)
 - Kubernetes Deprecated use of ReplicationController for new application deployments as Deployment & ReplicaSet replaced ReplicationController
 - OpenShift DeploymentConfig internally uses ReplicationController
 - As Google Kubernetes deprecated use of ReplicationController, Red Hat Openshift team deprecated DeploymentConfig, instead it is recommended to use Deployment & ReplicaSet for new application deployments
-- ReplicationController is still retained for legacy background compatility reasons only, hence it is recommended to this anymore
+- ReplicationController is still retained for legacy background compatility reasons only, hence it is not recommended to use this anymore
 </pre>
 
 ## Info - Build Config
