@@ -89,3 +89,30 @@ Expected output
 ![image](https://github.com/user-attachments/assets/c481c23e-089a-4fe7-8f1f-321335fa9ab5)
 ![image](https://github.com/user-attachments/assets/2dc1c9aa-aa6b-4668-b404-f73a9786ab95)
 ![image](https://github.com/user-attachments/assets/2f43f08a-e292-4a63-8634-5a10a0089960)
+
+## Info - What happens internally within Openshift when we run the below command
+```
+oc create deployment nginx --image=bitnami/nginx:latet --replicas=3
+```
+
+Below chain of things happens
+<pre>
+- oc client tool makes a REST call to API Server requesting it to create a deployment with image bitnami/nginx and desired number of Pods 3 and the deployment name must be nginx
+- API Server receives the request from oc client, it then creates a Deployment record/entry in etcd database
+- API Server then sends a broadcasting event saying "New Deployment created"
+- Deployment Controller receives this event, it then makes a REST call to API Server, requesting to create a ReplicaSet for nginx deployment
+- API Server creates a ReplicaSet in the etcd database
+- API Server sends a broadcasting event to notify that a New ReplicaSet is created
+- ReplicaSet Controller receives the event, it then makes a REST call to API Server, requesting it to create 3 Pods for the replicaSet
+- API Server creates 3 Pod record/entry in the etcd database
+- API Server sends broadcasting events to notify New Pods created
+- Scheduler will receive this event, it then identifies healthy nodes where the new Pod can be deployed, Scheduler sends its scheduling recommendations to API Server via REST call
+- API Server, retrieves the existing Pod from etcd database, it then updates the Pod scheduling recommendations came from scheduler
+- API Server sends broadcasting events to notify Pod scheduled to so and so node ( for example work-1 node )
+- Kubelet running in worker 1 node will receive the event, it then communicates with the CRI-O container runtime to pull the image
+- Kubelet creates a container on the worker 1 node with the newly pulled image
+- Kubelet starts the container in the worker 1 node
+- Kubelet reports the status back to API Server in heart-beat like periodic fashion about all the containers running in worker 1 node via REST call
+- API Server retrieves the Pod entry from etcd database based on the Pod Id and status shared by kubelet, it then updates the Pod status in the etcd database
+  
+</pre>
