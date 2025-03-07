@@ -145,7 +145,7 @@ Expected output
 ![image](https://github.com/user-attachments/assets/9552c1d0-10e7-4a81-b8e7-7ff58b70484e)
 
 
-## Info - Local Container Registry
+## Info - Local Image Registry
 <pre>
 - Every node has its own Local Image Registry
 - when we issue command crictl images, this is a list of images from local node
