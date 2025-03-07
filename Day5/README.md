@@ -114,5 +114,48 @@ Below chain of things happens
 - Kubelet starts the container in the worker 1 node
 - Kubelet reports the status back to API Server in heart-beat like periodic fashion about all the containers running in worker 1 node via REST call
 - API Server retrieves the Pod entry from etcd database based on the Pod Id and status shared by kubelet, it then updates the Pod status in the etcd database
-  
 </pre>
+
+## Info - DaemonSet
+<pre>
+-   
+</pre>
+
+
+## Info - StatefulSet
+
+## Info - Job
+
+## Info - CronJob
+
+
+## Lab - Creating a DaemonSet
+```
+oc create deployment hello --image=tektutor/hello-microservice:latest --replicas=3 --dry-run=client -o yaml
+oc create deployment hello --image=tektutor/hello-microservice:latest --replicas=3 --dry-run=client -o yaml > hello-daemonset.yml
+```
+
+you need to modify the hello-daemonset.yml as shown below
+<pre>
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+     app: hello
+  name: hello
+spec:
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+      - name: hello
+        image: image-registry.openshift-image-registry:5000/jegan/hello-microservice
+</pre>
+
+Expected output
+![image](https://github.com/user-attachments/assets/d276ecbd-8141-4d59-ba12-24200b27af7f)
