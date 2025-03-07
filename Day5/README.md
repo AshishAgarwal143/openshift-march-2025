@@ -133,9 +133,17 @@ Below chain of things happens
 For sample code, you may refer https://etcd.io/docs/v3.6/op-guide/kubernetes/
 
 ## Info - Job
+<pre>
+- any one time activity can be performed using Kubernetes/Openshift Job
+- For example
+  - you wish to take backup of etcd database
+  - you wish to take recover of etcd database
+</pre>
 
 ## Info - CronJob
-
+<pre>
+- if you wish to take backup every Friday midnight, CronJob   
+</pre>
 
 ## Lab - Creating a DaemonSet
 ```
