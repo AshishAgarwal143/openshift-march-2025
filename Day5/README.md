@@ -50,6 +50,9 @@ oc expose service/hello-microservice
 oc logs -f bc/hello-microservice
 oc get imagestreams
 oc describe is/hello-microservice
+
+cat /etc/hosts
+curl http://hello-microservice-jegan.apps.ocp4.alchemy.com
 ```
 
 Expected output
@@ -57,3 +60,4 @@ Expected output
 ![image](https://github.com/user-attachments/assets/d44f1deb-375a-4ba9-a271-1d1f0b8a6322)
 ![image](https://github.com/user-attachments/assets/c481c23e-089a-4fe7-8f1f-321335fa9ab5)
 ![image](https://github.com/user-attachments/assets/2dc1c9aa-aa6b-4668-b404-f73a9786ab95)
+![image](https://github.com/user-attachments/assets/2f43f08a-e292-4a63-8634-5a10a0089960)
