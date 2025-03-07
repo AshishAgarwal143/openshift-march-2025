@@ -48,9 +48,12 @@ oc project jegan
 oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/tektutor/hello-microservice.git --strategy=source
 oc expose service/hello-microservice
 oc logs -f bc/hello-microservice
+oc get imagestreams
+oc describe is/hello-microservice
 ```
 
 Expected output
 ![image](https://github.com/user-attachments/assets/e8ea6c4e-9b32-4c63-87bb-3f57057125fc)
 ![image](https://github.com/user-attachments/assets/d44f1deb-375a-4ba9-a271-1d1f0b8a6322)
 ![image](https://github.com/user-attachments/assets/c481c23e-089a-4fe7-8f1f-321335fa9ab5)
+![image](https://github.com/user-attachments/assets/2dc1c9aa-aa6b-4668-b404-f73a9786ab95)
