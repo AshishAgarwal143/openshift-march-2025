@@ -123,6 +123,14 @@ Below chain of things happens
 
 
 ## Info - StatefulSet
+<pre>
+- Deployment is meant for stateless application deployment
+- StatefulSet is meant to deployment database applications, especially a cluster of database
+- scale up a deployment is pretty simple for the deployment controller as each pod this is part of a deployment is independent of each other
+- scaling up a Statefulset, requires synchronizing data between all the pods in the statefulset, which is lot complex
+- creating a statefulset also requires loads of manual scripting within the statefulset yaml file
+</pre>
+For sample code, you may refer https://etcd.io/docs/v3.6/op-guide/kubernetes/
 
 ## Info - Job
 
