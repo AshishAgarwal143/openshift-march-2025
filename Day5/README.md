@@ -1,5 +1,17 @@
 # Day 5
 
+## Info - Openshift Internal Image Registry
+<pre>
+- As part of installing Openshift, we also deploy Openshift Internal Image Registry
+- Openshift Internal Image Registry stores all the container images
+- In order to deploy an application into openshift, we need to have those images in the Openshift's internal image registry
+</pre>
+
+## Info - Openshift ImageStream
+<pre>
+- OpenShift ImageStream is a folder created within Openshift Internal Image Registry to store a single image but multiple versions(tag) can be stored  
+</pre>
+
 ## Demo - Creating docker pull secret to extend the docker image download limit ( You don't have to do this )
 ```
 docker login
