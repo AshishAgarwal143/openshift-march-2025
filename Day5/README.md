@@ -12,6 +12,19 @@
 - OpenShift ImageStream is a folder created within Openshift Internal Image Registry to store a single image but multiple versions(tag) can be stored  
 </pre>
 
+## Info - Red Hat - Universal Base Images
+<pre>
+https://catalog.redhat.com/software/containers/rhel8/dotnet-90-runtime/672bc8ce97487bd4c61a1239
+
+https://catalog.redhat.com/software/containers/ubi8/openjdk-17/618bdbf34ae3739687568813
+
+https://catalog.redhat.com/software/containers/ubi8/python-39/6065b24eb92fbda3a4c65d8f
+</pre>
+
+## Info - Build Config
+
+## Info - Build
+
 ## Demo - Creating docker pull secret to extend the docker image download limit ( You don't have to do this )
 ```
 docker login
