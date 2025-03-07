@@ -143,3 +143,20 @@ Expected output
 ![image](https://github.com/user-attachments/assets/3b6a9e09-a890-4826-aebe-1c5d4a6e6ff4)
 ![image](https://github.com/user-attachments/assets/c1a14842-2b18-480e-a211-3b50e2fac02a)
 ![image](https://github.com/user-attachments/assets/9552c1d0-10e7-4a81-b8e7-7ff58b70484e)
+
+
+## Info - Local Container Registry
+<pre>
+- Every node has its own Local Image Registry
+- when we issue command crictl images, this is a list of images from local node
+- For example
+  - Worker 1 Node has its Local Image Registry
+  - Master 1 Node has its Local Image Registry
+</pre>
+
+## Info - Openshift Internal Image Registry
+<pre>
+- Every Openshift cluster has a single Internal Image Registry
+- From this Internal Registry, individuals nodes can download the required images
+- Openshift Internal Image Registry can import images from Docker Hub and/or JFrog Artifactory Private Image Registry
+</pre>
