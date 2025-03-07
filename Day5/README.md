@@ -159,3 +159,12 @@ spec:
 
 Expected output
 ![image](https://github.com/user-attachments/assets/d276ecbd-8141-4d59-ba12-24200b27af7f)
+![image](https://github.com/user-attachments/assets/9d887ea3-c3db-42d5-b7a9-a2c5c111a2a0)
+
+
+To create the daemonset
+```
+oc create -f hello-daemonset.yml
+oc get po -o wide
+```
+![image](https://github.com/user-attachments/assets/02d37703-a0ab-44bb-b80a-ec9e05caa1b4)
