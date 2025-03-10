@@ -108,6 +108,22 @@ Now, let's update the image name from bitnami/nginx:latest bitnami/nginx:1.26 in
 - to start tmux, the command you need to type in terminal is tmux
 - Shortcut to split the window horizontally is Ctrl+B "
 - Shortcut to split the window vertically is Ctrl+B %
-
 </pre>
+
+## Lab - Rollback
+In case the recently upgrade application version is unstable, you could rollback to the previous stable version
+```
+oc rollout undo deploy/nginx
+oc rollout status deploy/nginx
+oc rollout history deploy/nginx
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/c7722af7-a690-4eea-ac50-0c6fbef26c32)
+![image](https://github.com/user-attachments/assets/584f9136-cc65-46c1-9a81-cdfccd957afb)
+![image](https://github.com/user-attachments/assets/847a2b5c-7cc1-4884-887d-4dcb11f0dcd1)
+![image](https://github.com/user-attachments/assets/cdd3ddab-1ce5-4530-9370-ce59d8dd5a6d)
+![image](https://github.com/user-attachments/assets/b2b0db57-d31c-47d8-bac7-56eb1e61a597)
+![Uploading image.png…]()
+
 
