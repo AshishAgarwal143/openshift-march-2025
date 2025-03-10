@@ -101,3 +101,13 @@ Now, let's update the image name from bitnami/nginx:latest bitnami/nginx:1.26 in
 ![image](https://github.com/user-attachments/assets/f7510bcc-51ad-4567-86ba-5cd6a420b961)
 ![image](https://github.com/user-attachments/assets/bb39b35b-154a-457c-bc2b-3761a94f9309)
 ![image](https://github.com/user-attachments/assets/88d16016-5620-429b-8a54-d06858ddd52a)
+
+## Info - Unix tmux utility
+<pre>
+- With this unix/linux tool, you can split the windows horizontally/vertically
+- to start tmux, the command you need to type in terminal is tmux
+- Shortcut to split the window horizontally is Ctrl+B "
+- Shortcut to split the window vertically is Ctrl+B %
+
+</pre>
+
