@@ -85,5 +85,19 @@ Expected output
 
 ## Lab - Rolling update
 ```
-
+oc project nginx
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3 -o yaml --dry-run=client > nginx-deploy.yml
+oc create -f nginx-deploy.yml --save-config
+oc get deploy,rs,po
+oc get po -o yaml | grep image
 ```
+
+Expected output
+![image](https://github.com/user-attachments/assets/dba0f48f-8a98-402e-a7ca-5c94841dd894)
+
+Now, let's update the image name from bitnami/nginx:latest bitnami/nginx:1.26 in the nginx-deploy.yml and apply
+![image](https://github.com/user-attachments/assets/a7cc6721-95d8-448f-bf0b-d875695b48a6)
+![image](https://github.com/user-attachments/assets/5a1c9134-5b9b-4cba-96d9-ef12b96a2df5)
+![image](https://github.com/user-attachments/assets/f7510bcc-51ad-4567-86ba-5cd6a420b961)
+![image](https://github.com/user-attachments/assets/bb39b35b-154a-457c-bc2b-3761a94f9309)
+![image](https://github.com/user-attachments/assets/88d16016-5620-429b-8a54-d06858ddd52a)
