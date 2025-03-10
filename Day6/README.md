@@ -53,3 +53,4 @@ oc get svc
 ```
 
 Expected output
+![image](https://github.com/user-attachments/assets/b230544a-e968-45c5-bb02-bd4db82be66c)
