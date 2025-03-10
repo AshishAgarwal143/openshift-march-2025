@@ -71,3 +71,4 @@ curl http://192.168.100.11:30109
 
 Expected output
 ![image](https://github.com/user-attachments/assets/9a9ddd9b-06af-40b5-a265-0fffa0dc7878)
+![image](https://github.com/user-attachments/assets/6f371ef7-ebcb-4ff1-869a-4094ba0fbeda)
