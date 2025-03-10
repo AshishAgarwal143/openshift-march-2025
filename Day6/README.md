@@ -7,9 +7,31 @@ oc create deployment nginx --image=bitnami/nginx:latest --replicas=3 -o yaml --d
 
 Let's update the nginx-deploy.yml as shown below
 ```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+     labels:
+       name: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: bitnami/nginx:latest
+        imagePullPolicy: IfNotPresent
+      imagePullSecrets:
+      - name: docker-pullsecret
 ```
 
-Let's create the deployment in declarative style using yaml file
+Let's create the deployment in declarative style using yaml file, the save-config switch will save using which yml file the resource was created in the openshift cluster as a metadata. When we make changes to the yml later, openshift will validate whether this resources was originally created using the same yml file or was it created manually using imperative commands.
 ```
 oc create -f nginx-deploy.yml --save-config
 oc get deploy,rs,po
