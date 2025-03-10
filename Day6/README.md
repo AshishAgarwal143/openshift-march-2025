@@ -54,3 +54,20 @@ oc get svc
 
 Expected output
 ![image](https://github.com/user-attachments/assets/b230544a-e968-45c5-bb02-bd4db82be66c)
+
+## Lab - Creating a nodeport external service in declarative style for nginx deployment
+Let's delete the clusterip internal service we created for nginx deployment
+```
+oc delete -f nginx-clusterip-service.yml
+```
+
+Let's generate the nodeport service declarative manifest file and create the nodeport external service
+```
+oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client > nginx-nodeport-service.yml
+oc create -f nginx-nodeport-service.yml --save-config
+oc get svc
+curl http://192.168.100.11:30109
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/9a9ddd9b-06af-40b5-a265-0fffa0dc7878)
