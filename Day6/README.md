@@ -16,3 +16,4 @@ oc get deploy,rs,po
 ```
 
 Expected output
+![image](https://github.com/user-attachments/assets/9fb27c11-92af-4e6d-9e9f-9ddeac5fa6ba)
