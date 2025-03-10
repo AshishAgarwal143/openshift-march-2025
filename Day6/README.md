@@ -61,7 +61,7 @@ Let's delete the clusterip internal service we created for nginx deployment
 oc delete -f nginx-clusterip-service.yml
 ```
 
-Let's generate the nodeport service declarative manifest file and create the nodeport external service
+Let's generate the nodeport service declarative manifest file and create the nodeport external service. In the below command, 192.168.100.11 is the master01 node IP address, you could replace with master02,master03,worker02,worker03.
 ```
 oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client > nginx-nodeport-service.yml
 oc create -f nginx-nodeport-service.yml --save-config
