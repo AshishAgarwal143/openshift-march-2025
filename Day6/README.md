@@ -72,3 +72,18 @@ curl http://192.168.100.11:30109
 Expected output
 ![image](https://github.com/user-attachments/assets/9a9ddd9b-06af-40b5-a265-0fffa0dc7878)
 ![image](https://github.com/user-attachments/assets/6f371ef7-ebcb-4ff1-869a-4094ba0fbeda)
+
+## Info - Rolling update
+<pre>
+- Kubernetes & Openshift supports Rolling update to upgrade/downgrade your live application from one version to other without downtime
+- also supports rollback
+- When the deployment image/image version is update, openshift will start the rolling update
+- for each image version/tage, deployment controller will create one replicaset
+- gradually the existing replicaset desired count will reduce, while the new replicaset desired count will increase gradually
+- at one point, all the existing/old replicaset pods will be replaced with new pods using the new replicaset
+</pre>
+
+## Lab - Rolling update
+```
+
+```
