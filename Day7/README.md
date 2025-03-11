@@ -23,6 +23,8 @@ Build status
 ![image](https://github.com/user-attachments/assets/6005c1ed-9de9-425d-bfe1-28aa5620b6e7)
 ![image](https://github.com/user-attachments/assets/c2caea7e-d8ed-485d-9048-b77b9e6685f7)
 ![image](https://github.com/user-attachments/assets/14ffc710-1b4b-4f9e-a8d5-c7999a10cb2d)
+![image](https://github.com/user-attachments/assets/eb9c406a-540e-4d6b-833d-20b4fb2c3435)
+![image](https://github.com/user-attachments/assets/70360a51-22f1-4ba7-b1fb-fd5a03579fc7)
 
 
 ## Lab - Deploying .Net Application into Openshift from webconsole
