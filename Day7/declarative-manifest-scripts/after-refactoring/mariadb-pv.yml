@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mariadb-pv-jegan  # Replace 'jegan' with your name  
+  labels:
+    name: jegan    # Replace 'jegan' with your name
+spec:
+  capacity:
+    storage: 100Mi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteMany   # All the Pods from any node in the openshift cluster can read/write 
+  persistentVolumeReclaimPolicy: Retain  # Once the Pod is done with this PV, it will release it
+                                         # even after the PV is released, the data stored in the PV will be retained
+  nfs:
+    server: 192.168.1.233  # You need to replace this with 192.168.1.234 or 192.168.1.235 depending on your lab machine IP
+    path: /var/nfs/jegan/mariadb  # Replace jegan with your linux user
