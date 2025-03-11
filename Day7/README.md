@@ -122,3 +122,29 @@ Click on the route url ( upward arrow ), you need to add the url removing the ht
 - If the Storage Controller is able to find a matching PV, it will let the PVC claim and use the storage
 - In case the Storage Controller is not able to find a maching PV, the Pod that depends on it will be kept in Pending state until such a PV is provisioned either via Storage dynamically or manually by the Openshift Administrators
 </pre>
+
+## Lab - Clone the TekTutor Training Repository
+```
+cd ~
+git clone https://github.com/tektutor/openshift-march-2025.git
+cd openshift-march-2025
+```
+
+## Lab - Deploying a multi-pod application using declarative style that uses Persistent Volumes and Persistent Volume Claims
+```
+cd ~/openshift-march-2025
+git pull
+cd Day7/declarative-manifest-scripts
+./deploy.sh
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/1ef4f639-84dc-4694-bba7-3d260f65f1e9)
+![image](https://github.com/user-attachments/assets/a1361da4-fd98-4269-afa9-60dbf09b9754)
+![image](https://github.com/user-attachments/assets/e1f3afd1-bca3-46b6-9a9b-e526124cf4e6)
+![image](https://github.com/user-attachments/assets/0df56d93-eedc-4781-abcc-6e7e976ee145)
+![image](https://github.com/user-attachments/assets/747e08e1-9abc-4ccf-b35e-4247fcd2b5df)
+![image](https://github.com/user-attachments/assets/f8b9fac8-62d7-4db9-8fb4-2dce4204b6b2)
+![image](https://github.com/user-attachments/assets/5592bf2e-374b-4bb6-b901-1e3ce78414cf)
+![image](https://github.com/user-attachments/assets/df24d6d4-81be-4a94-bf38-ef7fc10280c2)
+![image](https://github.com/user-attachments/assets/0fc1ff19-e11f-4a15-98de-54b6a0badff5)
