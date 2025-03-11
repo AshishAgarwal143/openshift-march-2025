@@ -35,11 +35,5 @@ spec:
         - name: MARIADB_ROOT_PASSWORD
           value: root@123
 
-        - name: WORDPRESS_DATABASE
+        - name: MARIADB_DATABASE
           value: wordpress 
-
-        - name: WORDPRESS_DATABASE_HOST
-          value: mariadb 
-
-        - name: WORDPRESS_DATABASE_PORT_NUMBER
-          value: "3306"
