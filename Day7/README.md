@@ -81,3 +81,17 @@ Click on the route url ( upward arrow ), you need to add the url removing the ht
   - the Build can be compiling and packaging an application binary
   - the Build can be building a Container Image
 </pre>
+
+## Info - Persistent Volume (PV)
+<pre>
+- is an external storage
+- this could be shared network path, typically NFS shared path
+- this could be a AWS EBS, AWS S3 bucket, or any storage solution
+- we are not supposed to storing application data and logs in the temporary container/pod storage, hence we will be using an external storage which is permanent
+- This is typically created by System Administrators or Openshift Administrators
+- System Administrators create the persistent volume in the cluster scope, i.e any project can claim and use it
+- But only application deployment will be able to use a PV at at time
+</pre>
+
+## Info - Persistent Volume Claim
+
