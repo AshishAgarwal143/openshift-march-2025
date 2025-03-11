@@ -4,5 +4,5 @@ metadata:
   name: wordpress-cm
 data:
   database_name: wordpress
-  database_service_name: wordpress
+  database_service_name: mariadb 
   database_port: "3306"
