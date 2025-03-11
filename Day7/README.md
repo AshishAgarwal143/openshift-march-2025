@@ -53,3 +53,29 @@ Click on the route url ( upward arrow ), you need to add the url removing the ht
 ![image](https://github.com/user-attachments/assets/d7e608c9-55fc-412e-a934-04346c9a200c)
 ![image](https://github.com/user-attachments/assets/974fe433-95cc-415d-997b-7fbdcee8a812)
 ![image](https://github.com/user-attachments/assets/33661a0c-3227-4eb0-ab47-f8800b2f037c)
+
+## Info - BuildConfig
+<pre>
+- is a yaml file that takes GitHub url as an input
+- it is a configuration file
+- it takes the deployment strategy as parameter ( source, docker, etc., )
+- it creates an output ( Image Stream )
+  - the output can be a Container Image that will be pushed into Openshift's Internal Image Registry
+  - the output can be a Container Image that will be pushed into JFrog Artifactory Private Image Registry
+- BuildConfig.yaml or yml can be created either manually or Openshift can generate it for you
+- In case, you wish to create a BuildConfig.yml, it gives complete flexibility 
+</pre>
+
+## Info - Build
+<pre>
+- When we start a build from the BuildConfig, it makes an instance of the BuildConfig called Build
+- Each time, you start a build from a BuildConfig, it creates a Build with unique name
+- Build Controller monitors Build resources,
+  - Whenever someone creates a Build in any namespace
+  - Updates a build in any namespace
+  - Deletes a build in any namespace
+  - will receives events from API Server if any of the above events occurs
+- Build Controller reads the Build and then it creates Pod and starts the Build with the pod
+  - the Build can be compiling and packaging an application binary
+  - the Build can be building a Container Image
+</pre>
