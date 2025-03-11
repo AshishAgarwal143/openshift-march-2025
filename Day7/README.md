@@ -81,3 +81,44 @@ Click on the route url ( upward arrow ), you need to add the url removing the ht
   - the Build can be compiling and packaging an application binary
   - the Build can be building a Container Image
 </pre>
+
+## Info - Persistent Volume (PV)
+<pre>
+- is an external storage
+- this could be shared network path, typically NFS shared path
+- this could be a AWS EBS, AWS S3 bucket, or any storage solution
+- we are not supposed to storing application data and logs in the temporary container/pod storage, hence we will be using an external storage which is permanent
+- This is typically created by System Administrators or Openshift Administrators
+- System Administrators create the persistent volume in the cluster scope, i.e any project can claim and use it
+- But only application deployment will be able to use a PV at at time
+- It takes following attributes
+  - size of the storage
+  - access mode
+  - type of storage
+  - storageclass ( optional )
+</pre>
+
+## Info - Persistent Volume Claim (PVC)
+<pre>
+- any application that runs within Kubernetes/Openshift can request for external storage using PVC  
+- it takes the following attributes
+  - size of the storage required
+  - access mode
+  - type of storage
+  - storageclass ( optional )
+</pre>
+
+## Info - Peristent Volume StorageClass
+<pre>
+- Persistent Volumes can be manually provisioned by System Administrators or Openshift Administrators
+- Persistent Voluems can also be dynamically provisioned using a storageclass
+- we could create storageclass for NFS, AWS EBS, etc by defining a yaml file
+- If a Storage for NFS is active in the cluster, when applications request for storage via PVC, the PV will automatically provisioned as per the PVC contstraints
+</pre>  
+
+## Info - Storage Controller
+<pre>
+- When a Pod/Deployment requests for storage by way of PVC, the Storage Controller scans the entire cluster looking for a matching PV
+- If the Storage Controller is able to find a matching PV, it will let the PVC claim and use the storage
+- In case the Storage Controller is not able to find a maching PV, the Pod that depends on it will be kept in Pending state until such a PV is provisioned either via Storage dynamically or manually by the Openshift Administrators
+</pre>
