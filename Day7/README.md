@@ -25,4 +25,31 @@ Build status
 ![image](https://github.com/user-attachments/assets/14ffc710-1b4b-4f9e-a8d5-c7999a10cb2d)
 
 
-## Lab - Deploying 
+## Lab - Deploying .Net Application into Openshift from webconsole
+
+Navigate to Openshift webconsole as a Developer
+![image](https://github.com/user-attachments/assets/50045036-1015-4315-9426-7b9aae6ef54b)
+
+Click +Add
+![image](https://github.com/user-attachments/assets/17c02e9d-9643-435b-8b4f-9775df95e375)
+
+Under "Getting started resources", select "View all samples"
+![image](https://github.com/user-attachments/assets/5af999e3-6747-4e32-a649-e0909e5b7e3b)
+
+Select ".Net 8 Build Images"
+![image](https://github.com/user-attachments/assets/4f505d06-d784-495f-a252-becd634412f5)
+![image](https://github.com/user-attachments/assets/d74cd6a7-f32e-4b8c-bc0a-6ededd6d4b7c)
+Click "Create"
+
+Build Progress
+![image](https://github.com/user-attachments/assets/b2bfa69c-8ca8-47d7-8243-b71ab1e1607a)
+![image](https://github.com/user-attachments/assets/ebfe236a-5cff-4134-b77f-1a2df93bbf09)
+![image](https://github.com/user-attachments/assets/7ccde925-70bd-4688-bb32-e77135778c53)
+![image](https://github.com/user-attachments/assets/e6f7502f-3e18-4b3a-9af1-4121e1ee43a6)
+![image](https://github.com/user-attachments/assets/f4481145-7aff-4705-b201-b86dd9c674ad)
+![image](https://github.com/user-attachments/assets/d900d416-a9f1-4e32-98ca-d3fa9b0ec29d)
+
+Click on the route url ( upward arrow ), you need to add the url removing the http into the /etc/hosts file as an Administrator
+![image](https://github.com/user-attachments/assets/d7e608c9-55fc-412e-a934-04346c9a200c)
+![image](https://github.com/user-attachments/assets/974fe433-95cc-415d-997b-7fbdcee8a812)
+![image](https://github.com/user-attachments/assets/33661a0c-3227-4eb0-ab47-f8800b2f037c)
