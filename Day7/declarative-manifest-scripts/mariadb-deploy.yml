@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  labels:
+    app: mariadb
+  name: mariadb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      volumes:
+      - name: mariadb-storage
+        peristentVolumeClaim:
+          claimName: mariadb-pvc-jegan # Replace 'jegan' with your name
+
+      imagePullSecrets:
+      - name: docker-pullsecret
+
+      containers:
+      - name: mariadb
+        image: bitnami/mariadb:latest
+        imagePullPolicy: IfNotPresent
+
+        volumeMounts:
+        - name: mariadb-storage
+          mountPath: /bitnami/mariadb/data
+
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: root@123
+
+        - name: WORDPRESS_DATABASE
+          value: wordpress 
+
+        - name: WORDPRESS_DATABASE_HOST
+          value: mariadb 
+
+        - name: WORDPRESS_DATABASE_PORT_NUMBER
+          value: "3306"
