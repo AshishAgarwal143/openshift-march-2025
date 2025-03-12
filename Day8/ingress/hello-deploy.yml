@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello
+  name: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      imagePullSecrets:
+      - name: docker-pullsecret
+      containers:
+      - image: tektutor/hello-microservice:latest
+        name: hello
+        imagePullPolicy: IfNotPresent
