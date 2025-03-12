@@ -130,3 +130,4 @@ http://127.0.0.1:9090
 Expected output
 ![image](https://github.com/user-attachments/assets/1fe7a1ac-9ff5-4505-92e4-ae6710c2cfd2)
 
+To stop the port forwarding, press Ctrl+C and the nginx welcome page will not be accessible anymore.
