@@ -93,3 +93,10 @@ Before using curl, make sure tektutor.apps.ocp4.alchemy.com is added into /etc/h
 Expected output
 ![image](https://github.com/user-attachments/assets/ca0b26a9-db06-4a5e-bc5a-c8f897f19edc)
 ![image](https://github.com/user-attachments/assets/f0d91685-21e2-40ab-8f06-a7c0cccec37c)
+
+## Info - Route vs Ingress
+<pre>
+- Openshift Route internally depends on Ingress
+- In otherwords, Openshift Route is developed on top of Kubernetes Ingress
+- Generally Openshift Routes forwards the call to a single Service, while Ingress forwards the call to multiple services based on rules
+</pre>
