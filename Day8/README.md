@@ -80,6 +80,15 @@ cd ~/openshift-march-2025
 git pull
 cd Day8/ingress
 oc project jegan
+cat ingress.yml
+
 oc apply -f ingress.yml
 oc get ingress
+
+curl http://tektutor.apps.ocp4.alchemy.com/nginx
+curl http://tektutor.apps.ocp4.alchemy.com/hello
 ```
+
+Expected output
+![image](https://github.com/user-attachments/assets/ca0b26a9-db06-4a5e-bc5a-c8f897f19edc)
+![image](https://github.com/user-attachments/assets/f0d91685-21e2-40ab-8f06-a7c0cccec37c)
