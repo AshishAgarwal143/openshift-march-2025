@@ -100,3 +100,33 @@ Expected output
 - In otherwords, Openshift Route is developed on top of Kubernetes Ingress
 - Generally Openshift Routes forwards the call to a single Service, while Ingress forwards the call to multiple services based on rules
 </pre>
+
+## Lab - Port Forwarding
+<pre>
+- This is only used for testing purpose locally, hence this is not a solution used in production
+- Generally used by developers for quicky testing if their application is running as expected after deployment
+- For production use, we need to use services and routes only
+</pre>
+
+Let's list the pods
+```
+oc project jegan
+oc get pods
+```
+
+Port forward in a Terminal Tab
+```
+oc port-forward your-pod-name 9090:8080
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/df6fde8a-dbeb-47bc-8170-0e7d0f75c8d6)
+
+You may open a web browser on the linux machine, and navigate to 
+<pre>
+http://127.0.0.1:9090  
+</pre>
+
+Expected output
+![image](https://github.com/user-attachments/assets/1fe7a1ac-9ff5-4505-92e4-ae6710c2cfd2)
+
