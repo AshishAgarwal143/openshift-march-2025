@@ -156,3 +156,26 @@ Expected output
 ![image](https://github.com/user-attachments/assets/8774305e-7a22-421a-9a44-194f90dff7bc)
 ![image](https://github.com/user-attachments/assets/69a1d747-a76d-467b-a05d-dee898f42eb6)
 ![image](https://github.com/user-attachments/assets/6094f79e-83c0-4fc6-9f57-4784f8e581cb)
+
+## Lab - Checking events pertaining to a pod
+```
+oc get po
+oc events --for pod/mariadb-c97d89cc5-t8xdm
+oc events --for pod/wordpress-5d9f8
+```
+![image](https://github.com/user-attachments/assets/86c723f2-7411-42ef-8997-1f7c980ce5ef)
+
+
+## Lab - Using secret to store mysql login credentials and configmaps to store non-sensite key/values
+```
+cd ~/openshift-march-2025
+git pull
+cd Day7/declarative-manifest-scripts/after-refactoring
+./deploy.sh
+```
+
+Expected output
+![image](https://github.com/user-attachments/assets/f017eb79-60eb-4997-a095-940cf29d9c22)
+![image](https://github.com/user-attachments/assets/0962ee19-f5b0-4b23-934a-656b30044a66)
+![image](https://github.com/user-attachments/assets/24ae1b42-12e1-4176-ba81-7d8c726bdec1)
+![image](https://github.com/user-attachments/assets/7506f125-2256-43dc-b5a3-58347f2626b0)
