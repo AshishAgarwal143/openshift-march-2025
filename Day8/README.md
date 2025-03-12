@@ -88,6 +88,7 @@ oc get ingress
 curl http://tektutor.apps.ocp4.alchemy.com/nginx
 curl http://tektutor.apps.ocp4.alchemy.com/hello
 ```
+Before using curl, make sure tektutor.apps.ocp4.alchemy.com is added into /etc/hosts file.
 
 Expected output
 ![image](https://github.com/user-attachments/assets/ca0b26a9-db06-4a5e-bc5a-c8f897f19edc)
