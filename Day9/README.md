@@ -45,6 +45,8 @@ docker tag tektutor/spring-hello-ms:1.0 tektutor/spring-hello-ms:latest
 docker login
 docker push tektutor/spring-hello-ms:latest
 ```
+![image](https://github.com/user-attachments/assets/7ede69d9-192e-4473-bd44-0532f1976d2f)
+
 
 Let's now deploy the application declaratively pulling our custom image from Docker Hub
 ```
