@@ -35,7 +35,7 @@ cd ~/openshift-march-2025
 git pull
 cd Day9/hello-microservice
 docker build -t tektutor/spring-hello-ms:1.0 .
-docker image
+docker images
 ```
 
 Tag and push the image ( you won't be able to push to my docker hub account - this is just a demo )
