@@ -4,8 +4,7 @@ metadata:
   name: hello
 spec:
   selector:
-    matchLabels:
-      app: hello
+    app: hello
   ports:
   - protocol: TCP
     port: 8080
