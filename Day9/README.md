@@ -59,8 +59,10 @@ oc apply -f hello-svc.yml
 oc apply -f hello-route.yml
 
 oc get route
+curl http://hello-jegan.apps.ocp4.alchemy.com
 ```
 
 Expected output
 ![image](https://github.com/user-attachments/assets/bbb3fc54-82c0-4e03-94ec-d745032eb712)
+![image](https://github.com/user-attachments/assets/28c37f59-b5c3-4734-9814-fabb7cee2c08)
 
