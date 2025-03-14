@@ -61,6 +61,18 @@ Expected output
 ![image](https://github.com/user-attachments/assets/8f0f90cf-bb03-4238-8ff5-140c96d6527c)
 ![image](https://github.com/user-attachments/assets/88b9f77a-ba41-4c9b-a025-2b231265d0a8)
 
+## Info - Docker Network Model
+<pre>
+- For each container that we create, Docker creates a pair of veth devices (virtual ethernet - software defined network card with network stack )
+- One veth devices stays in the local machine, while the other veth device is used with the container as a network card
+- When we install docker, docker creates a virtual switch ( software defined ) called docker0
+- all the containers by default are connected to the docker0 default network
+- the subnet (IP range) assigned for docker 0 is 172.17.0.0/16 ( 256 x 256 = 65536 IP addresses in this network )
+- some IP addresses are reserved for internal use
+- 172.17.0.1 is assigned to docker0 bridge, as it acts as a Gateway for all containers 
+- it is through this Gateway containers can reach out to Internet, and Internet can reach out to containers
+</pre>  
+
 ## Info - Kubernetes Network Model
 <pre>
 - Kubernetes provides an interface called Container Network Interface (CNI)
@@ -92,12 +104,27 @@ Expected output
 
 ## Info - Flannel Overview
 <pre>
+- Flannel is implemented by CoreOS company
+- this is very first Kubernetes network add-on that was developed
+- it uses overlay network
+- it support many backends including UDP
+- the drawback of UDP backend in Flannel is performance degradation as each incoming packet has to de-encapsulated and each outgoing packet has to encpasulated
+- Also Flannel doesn't support Network policy
 </pre>  
 
 ## Info - Weave Overview
+<pre>
+- is developed by a company called WeavWorks
+- it supports Pod Networking,Service Network and Node Networking
+- it supports Kubernetes Network policy
+</pre>  
 
 ## Info - Calico Overview
 <pre>
+- is developed by a company called Tigera
+- it used BGP protcol, it is highly efficient, high-performance guaranteed
+- it also supports Kubernetes network
+- BGP protocol is powering internet (world wide web), when such a complex network is efficiently working with BGP, the same benefits can be expected within Kubernetes/Openshift if we use Calico
 </pre>  
 
 ## Info - Openshift Network Policy
