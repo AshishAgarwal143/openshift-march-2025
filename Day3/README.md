@@ -75,7 +75,7 @@
 - in Kubernetes/Openshift, IP address is assigned only on the Pod level, not on the container level
 - this is a database record/entry stored in etcd database
 </pre>
-![pod](pod.png)
+![pod](PodUpdated.png)
 
 ## Info - ReplicaSet
 <pre>
