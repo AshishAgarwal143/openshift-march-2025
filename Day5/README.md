@@ -50,8 +50,26 @@ D - Dependency Injection or Dependency Inversion or Inversion of Control (IOC)
 </pre>
 
 ## Info - Build Config
+<pre>
+- BuildConfig captures declarative instructions for Openshift to build your applicaiton source code into a Container Image that can be used to deploy your applicaiton into Openshift
+- OpenShift supports different deployment strategies to deploy your application into Openshift
+  - your application can be deployed from readily available container image
+  - your application can be build from GitHub repository url with source strategy, in this case Dockerfile and BuildConfig will be automatically generated based on inputs we provide in the command
+  - your application can be build from GitHub repository url with docker strategy, in this case Openshift expects your GitHub repository to provide one Dockerfile but the BuildConfig will be auto-generated
+- BuildConfig captures the below attributes
+  - GitHub or any similar version control url
+  - Deploys your custom appliction Container Image into
+    - Openshift's Internal Image Registry
+    - Private Openshift Registry like JFrog Artifactory or Sonatype Nexus
+    - Docker Hub Image Registry
+</pre>
 
 ## Info - Build
+<pre>
+- BuildConfig is the blueprint of a Build
+- Build is an instance of a BuildConfig
+- When we start a build using BuildConfig, it creates a Build instance. The Build Controller get notified when new Build is created, it then take the inputs from Build and creates a Pod and starts the build within that pod  
+</pre>
 
 ## Demo - Creating docker pull secret to extend the docker image download limit ( You don't have to do this )
 ```
