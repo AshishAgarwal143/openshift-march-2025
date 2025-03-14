@@ -45,12 +45,13 @@ Expected output
 
 ```
 oc project jegan
-
-oc new-app https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
-
-oc logs -f bc/openshift-march-2025
-
-oc expose svc/openshift-march-2025
+cd ~/openshift-march-2025
+git pull
+cd Day10/hello
+cp ~/.m2/repository m2
+oc new-app --name=hello https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
+oc logs -f bc/hello
+oc expose svc/hello
 ```
 
 Expected output
