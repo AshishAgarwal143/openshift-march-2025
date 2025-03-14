@@ -119,7 +119,12 @@ Below chain of things happens
 
 ## Info - DaemonSet
 <pre>
--   
+- The DaemonSet Controller ensures, it detects the number of nodes in the Openshift cluster and accordingly it creates so many Pods and ensures one pod runs on every node
+- This is rarely required for regular applications, it is required only in special cases where you must run one pod per node
+- This are some practical use case of DaemonSet
+  - one kube-proxy pod runs in every node
+  - one core-dns pod runs in every node
+  - one prometheus pod runs in every node
 </pre>
 
 
