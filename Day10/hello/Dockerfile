@@ -3,7 +3,6 @@ RUN mkdir -p /home/jboss/myproject/target
 WORKDIR /home/jboss/myproject
 RUN mkdir -p /home/jboss/.m2
 COPY . .
-COPY m2 /home/jboss/.m2
 RUN mvn clean package
 
 FROM registry.access.redhat.com/ubi8/openjdk-17
