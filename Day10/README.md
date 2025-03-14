@@ -16,7 +16,7 @@
 
 ```
 oc project jegan
-oc new-app https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
+oc new-app registry.access.redhat.com/ubi8/openjdk-17~https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
 oc logs -f bc/openshift-march-2025
 ```
 
