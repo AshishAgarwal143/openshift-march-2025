@@ -140,6 +140,26 @@ spec:
   ingress: []  
 </pre>
 
+Expected output
+Before applying network policy
+![image](https://github.com/user-attachments/assets/0dbfc960-e377-46cc-9596-4715dcbc2153)
+
+After applying network policy
+![image](https://github.com/user-attachments/assets/a09de5bc-5c89-4954-a2c1-50806a799294)
+![image](https://github.com/user-attachments/assets/223f8550-7aab-481c-9ee5-4c46e1c98353)
+
+If you delete the network policy, again route will be able to serve the page
+```
+oc get networkpolicy
+curl http://hello-app-jegan.apps.ocp4.alchemy.com
+oc delete -f denyall.yml
+oc get networkpolicy
+curl http://hello-app-jegan.apps.ocp4.alchemy.com
+```
+![image](https://github.com/user-attachments/assets/2009eaad-962c-43d9-a4de-6786b6bd7d54)
+
+
+
 ## Lab - Allow connections from Ingress Controller
 <pre>
 apiVersion: networking.k8s.io/v1
