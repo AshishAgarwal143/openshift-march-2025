@@ -252,3 +252,23 @@ spec:
             name: test-pods  
 </pre>
 
+## Lab - Allow outgoing traffic with egress
+<pre>
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: egress-namespaces
+spec:
+  podSelector:
+    matchLabels:
+      app: test
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - namespaceSelector:
+        matchExpressions:
+        - key: namespace
+          operator: In
+          values: ["jegan", "jegan-new"]  
+</pre>
