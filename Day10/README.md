@@ -49,12 +49,18 @@ cd ~/openshift-march-2025
 git pull
 cd Day10/hello
 cp ~/.m2/repository m2
-oc new-app --name=hello https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
+oc new-app --name=hello-app https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
 oc logs -f bc/hello
 oc expose svc/hello
+curl http://hello-app-jegan.apps.ocp4.alchemy.com
 ```
 
 Expected output
+![image](https://github.com/user-attachments/assets/818306a4-727b-442e-8920-abcffc6b95ed)
+![image](https://github.com/user-attachments/assets/965c9f5e-4319-46cd-8760-bb781c379e09)
+![image](https://github.com/user-attachments/assets/8f0f90cf-bb03-4238-8ff5-140c96d6527c)
+![image](https://github.com/user-attachments/assets/88b9f77a-ba41-4c9b-a025-2b231265d0a8)
+
 
 ## Info - Openshift Network Model Overview
 <pre>
