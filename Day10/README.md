@@ -198,6 +198,22 @@ spec:
     - podSelector: {}  
 </pre>
 
+Before applying the above network policy, let's check if we access a service from name project namespace
+```
+oc project
+oc get deploy
+oc rsh deploy/openshift-march-2025
+curl http://hello-app:8080
+```
+Expected output
+![image](https://github.com/user-attachments/assets/41b1e4f4-07bc-4983-8369-e1adf8222624)
+
+Let's try accessing from a Pod that runs in a different project namespace before applying the above network policy
+```
+
+```
+
+
 ## Lab - Allow only Http and Https access
 <pre>
 kind: NetworkPolicy
