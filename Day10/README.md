@@ -177,6 +177,14 @@ spec:
   - Ingress  
 </pre>
 
+```
+oc create -f allow-via-ingress.yml
+curl http://hello-app-jegan.apps.ocp4.alchemy.com
+```
+Expected output
+![image](https://github.com/user-attachments/assets/417e24f6-1f2f-40b8-a490-f016b6ba75ac)
+
+
 ## Lab - Allow same namespace
 <pre>
 kind: NetworkPolicy
