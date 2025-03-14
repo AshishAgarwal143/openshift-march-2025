@@ -131,6 +131,7 @@ cd openshift-march-2025
 ```
 
 ## Lab - Deploying a multi-pod application using declarative style that uses Persistent Volumes and Persistent Volume Claims
+![wordpress](wordpress.png)
 ```
 cd ~/openshift-march-2025
 git pull
