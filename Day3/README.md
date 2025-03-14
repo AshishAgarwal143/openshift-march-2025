@@ -55,6 +55,13 @@
   - applications should run as normal user(non-admimistrator), if they attempt things as admin, they won't be allowed to run
 </pre>
 
+## Info - Kubernetes High Level Architecture
+![architecture](KubernetesArchitecture2.png)
+
+## Info - Openshift High Level Architecture
+![architecture](openshiftArchitecture.png)
+![architecture](master-node.png)
+
 ## Info - Pod Overview
 <pre>
 - is a group of related containers
