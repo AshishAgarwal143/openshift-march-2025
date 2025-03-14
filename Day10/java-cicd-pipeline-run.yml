@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: java-tekton-cicd-pipeline-run-
+spec:
+  pipelineRef:
+    name: java-tekton-cicd-pipeline
+  workspaces:
+  - name: source-code
+    persistentVolumeClaim:
+      claimName: tekton-pvc-jegan #Replace 'jegan' with your name
+    subPath: source
+  - name: maven-repo
+    persistentVolumeClaim:
+      claimName: tekton-pvc-jegan #Replace 'jegan' with your name
+    subPath: settings 
+

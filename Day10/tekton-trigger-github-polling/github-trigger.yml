@@ -1,0 +1,26 @@
+apiVersion: polling.tekton.dev/v1alpha1
+kind: Repository
+metadata:
+  name: tektutor-git-repo
+spec:
+  url: https://github.com/tektutor/hello-spring-boot.git
+  ref: main
+  frequency: 2m
+  type: github
+  pipelineRef:
+    name: java-tekton-cicd-pipeline
+    params:
+    - name: sha
+      expression: commit.sha
+    - name: repoURL
+      expression: repoURL
+    workspaces:
+    - name: source-code
+      persistentVolumeClaim:
+        claimName: tekton-pvc-jegan # Replace 'jegan' with your name
+      subPath: source
+
+    - name: maven-repo
+      persistentVolumeClaim:
+        claimName: tekton-pvc-jegan # Replace 'jegan' with your name
+      subPath: settings
