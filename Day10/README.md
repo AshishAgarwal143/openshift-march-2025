@@ -61,6 +61,26 @@ Expected output
 ![image](https://github.com/user-attachments/assets/8f0f90cf-bb03-4238-8ff5-140c96d6527c)
 ![image](https://github.com/user-attachments/assets/88b9f77a-ba41-4c9b-a025-2b231265d0a8)
 
+## Info - Kubernetes Network Model
+<pre>
+- Kubernetes provides an interface called Container Network Interface (CNI)
+- Any Container Engine or Container Runtime that must be supported by Kubernetes must implement the CNI
+- Kubernetes kubelet container agent communicates with Container Runtime via the generic CNI interface
+- Kubernetes provides only Network specification and it leaves the implementation details to the Network addons vendors
+- There are many Network addons available for Kubernetes
+- There are about 3 networks
+  - Node Network ( Node to Node communication )
+  - Pod Network ( Pod to Pod communication )
+  - Service Network ( Pod to Service Communication )
+- Pods are assigned with Private IPs
+- As per Kubernetes Network specifications
+  - Pods running in any node must be able to communicate with any Pods running in any node within K8s cluster
+  - kubelet must be able to communicate with all the Pods running on the local node
+- Network Addons vendors implemented the Kubernetes Network Specifications, some of the popular network addons are
+  - Calico
+  - Weave
+  - Flannel
+</pre>  
 
 ## Info - Openshift Network Model Overview
 <pre>
