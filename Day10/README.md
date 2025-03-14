@@ -73,7 +73,7 @@ Expected output
 - it is through this Gateway containers can reach out to Internet, and Internet can reach out to containers
 </pre>  
 
-## Info - Kubernetes Network Model
+## Info - Kubernetes/Openshift Network Model
 <pre>
 - Kubernetes provides an interface called Container Network Interface (CNI)
 - Any Container Engine or Container Runtime that must be supported by Kubernetes must implement the CNI
@@ -92,14 +92,6 @@ Expected output
   - Calico
   - Weave
   - Flannel
-</pre>  
-
-## Info - Openshift Network Model Overview
-<pre>
-</pre>  
-
-## Info - Openshift Network Addons Overview
-<pre>
 </pre>  
 
 ## Info - Flannel Overview
@@ -129,7 +121,12 @@ Expected output
 
 ## Info - Openshift Network Policy
 <pre>
-  
+- Openshift Network Policy support controlling the communication between microservices/containerized application workloads in Openshift/Kubernetes
+- Assume we have 4 microsevices, A, B, C & D
+- If you wish to allow communication from A -> B, but not B -> A
+- If you wish to allow communication from B -> C, but not A -> C
+- these kind of policies can be implemented using Openshift Network Policies
+- this offers extra layer of security to your applications running within Kubernetes/Openshift
 </pre>
 
 ## Lab - Deny all traffic to all pods
