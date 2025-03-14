@@ -115,6 +115,7 @@ Below chain of things happens
 - Kubelet reports the status back to API Server in heart-beat like periodic fashion about all the containers running in worker 1 node via REST call
 - API Server retrieves the Pod entry from etcd database based on the Pod Id and status shared by kubelet, it then updates the Pod status in the etcd database
 </pre>
+![deployment](deployment.png)
 
 ## Info - DaemonSet
 <pre>
