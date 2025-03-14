@@ -17,7 +17,7 @@
 ```
 oc project jegan
 
-oc new-app registry.access.redhat.com/ubi8/openjdk-17~https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
+oc new-app registry.access.redhat.com/ubi8/openjdk-17~https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=source
 
 oc logs -f bc/openshift-march-2025
 
@@ -29,6 +29,31 @@ Expected output
 ![image](https://github.com/user-attachments/assets/e7947f25-c1cc-43f6-ab84-90564a6f4370)
 ![image](https://github.com/user-attachments/assets/0387c0e9-d6bb-418d-9e8f-acd46a20f385)
 ![image](https://github.com/user-attachments/assets/42847ab3-8771-4fc5-a070-f3769e097e61)
+
+## Lab - Deploying our springboot microservice application from GitHub source code using docker strategy into Openshift
+### Note
+<pre>
+- In case of docker strategy, source code will be cloned from GitHub repository url we gave
+- Openshift will expect a Dockerfile in the GitHub repo
+- Openshift will generate a BuildConfig
+- BuildConfig generated will refer Dockerfile we placed in the GitHub to perform the application and Image build
+- Once the image is successfully built, it will push the image into the Openshift Internal Registry
+- From the Openshift Internal registry, our application will be deployed into Openshift
+- We need to just expose the service to create a route, the route url must be added to /etc/hosts
+- We should be able to access the route url to invoke the microservice rest endpoint
+</pre>
+
+```
+oc project jegan
+
+oc new-app https://github.com/tektutor/openshift-march-2025.git --context-dir=Day10/hello --strategy=docker
+
+oc logs -f bc/openshift-march-2025
+
+oc expose svc/openshift-march-2025
+```
+
+Expected output
 
 ## Info - Openshift Network Model Overview
 <pre>
